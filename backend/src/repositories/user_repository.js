@@ -2,8 +2,12 @@ const {
   models: { User },
 } = require('../db/models/index')
 
-const findUser = async (_id) => {
-  return User.findOne({ _id })
+const findUser = (_id) => {
+  return User.findOne({ _id }).select('-password')
 }
 
-module.exports = { findUser }
+const listUsers = () => {
+  return User.find().select('-password')
+}
+
+module.exports = { findUser, listUsers }
