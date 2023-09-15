@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/chat" element={<Chat />} />
+          <Route path="/chat/:to" element={<Chat />} />
         </Routes>
       </BrowserRouter>
     </Provider>
